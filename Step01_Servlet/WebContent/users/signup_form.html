@@ -7,7 +7,7 @@
 <body>
 	<div class="container">
 		<h1>회원 가입 폼 입니다.</h1>
-    <form action="signup.jsp">
+    <form action="signup" method="post">
         <label for="email">이메일</label>
         <input type="text" id="email" name="email"><br>
         <!-- label과 input은 형제요소
@@ -89,7 +89,11 @@
         <br>
         <button type="submit">가입</button>
     </form>
-    <!-- 여기 있는것들은 반드시 외워도야한다...-->
+    <!-- 
+    	1.가입버튼을 눌렀을떄 요청을 처리할 signupServlet을 만들어 보세요.
+    	2.전송된 모든 내용을(요청파라미터) 추출해서 콘솔창에 출력해 보세요.
+    	3.요청을 한 클라이언트 웹브라우저에게 "가입되었습니다" 라고 응답해 보세요.
+    -->
 		
 		
 	</div>
