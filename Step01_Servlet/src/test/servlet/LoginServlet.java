@@ -9,23 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/send")
-public class sendServlet extends HttpServlet {
+@WebServlet("/users/login")
+public class LoginServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		/* 
-		 * <input type="text" name="msg" placeholder="서버에 할말 입력..." />
-		 * 
-		 * 위의 input 요소에 입력한
-		 * 
-		 *  msg 라는 이름으로 전송된 문자열 추출하기
-		 */
-		
-		//post 방식 전송시 한글 꺠지지 않도록 만드는법
 		req.setCharacterEncoding("utf-8");
-		
-		String a = req.getParameter("msg");
-		System.out.println(a);
+		String id=req.getParameter("id");
+		String pwd=req.getParameter("pwd");
+		System.out.println("입력한 아이디 : "+id);
+		System.out.println("입력한 비밀번호 : "+pwd);
 		
 		//응답 인코딩 설정
 		resp.setCharacterEncoding("utf-8");
@@ -40,12 +32,9 @@ public class sendServlet extends HttpServlet {
 		pw.println("<title></title>");
 		pw.println("</head>");
 		pw.println("<body>");
-		pw.println("Okey~");
+		pw.println("로그인 되었습니다.");
 		pw.println("</body>");
 		pw.println("</html>");
 		pw.close();
-		
-		
-		
 	}
 }
